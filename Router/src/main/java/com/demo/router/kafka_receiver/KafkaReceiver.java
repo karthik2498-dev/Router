@@ -51,4 +51,18 @@ public class KafkaReceiver {
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         return (TransactionRequest) unmarshaller.unmarshal(new StringReader(xml));
     }
+    
+   /* @KafkaListener(topics = "payments.inward", groupId = "payment-router")
+    public void receiveFromKafka2(ConsumerRecord<String, String> record) {
+        String xmlMessage = record.value();
+        try {
+            // Convert XML string to TransactionRequest object
+            TransactionRequest request = convertXmlToObject(xmlMessage);
+            System.err.println("Message Received : "+xmlMessage);
+        }
+        catch (Exception e) {
+            System.err.println("Failed to process message:");
+            e.printStackTrace();
+        }
+    }*/
 }
