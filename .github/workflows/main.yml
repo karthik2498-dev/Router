@@ -27,4 +27,4 @@ jobs:
         context: ./
         file: ./Router/Dockerfile
         push: true
-        tags: karthik24981998/router:1.0
+        tags: karthik24981998/router:1.2
